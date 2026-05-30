@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 120 30% 8%;
+    --foreground: 45 80% 65%;
+
+    --card: 120 25% 12%;
+    --card-foreground: 45 80% 65%;
+
+    --popover: 120 25% 12%;
+    --popover-foreground: 45 80% 65%;
+
+    --primary: 45 90% 55%;
+    --primary-foreground: 120 30% 8%;
+
+    --secondary: 120 20% 15%;
+    --secondary-foreground: 45 80% 65%;
+
+    --muted: 120 15% 18%;
+    --muted-foreground: 45 40% 50%;
+
+    --accent: 0 85% 55%;
+    --accent-foreground: 45 90% 85%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 120 20% 25%;
+    --input: 120 20% 20%;
+    --ring: 45 90% 55%;
+
+    --radius: 0rem;
+
+    --retro-green: 140 60% 40%;
+    --retro-gold: 45 90% 55%;
+    --retro-red: 0 85% 55%;
+    --retro-amber: 35 90% 60%;
+
+    --sidebar-background: 120 25% 10%;
+    --sidebar-foreground: 45 80% 65%;
+    --sidebar-primary: 45 90% 55%;
+    --sidebar-primary-foreground: 120 30% 8%;
+    --sidebar-accent: 120 20% 15%;
+    --sidebar-accent-foreground: 45 80% 65%;
+    --sidebar-border: 120 20% 25%;
+    --sidebar-ring: 45 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Crimson Text', Georgia, serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', 'Times New Roman', serif;
+  }
+}

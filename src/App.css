@@ -1,0 +1,21 @@
+/* App.css */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: Add a slight dark tint over the stars in the sidebar areas 
+   if the text is hard to read */
+.flex-shrink-0 {
+  background-color: rgba(0, 0, 0, 0.3);
+}
