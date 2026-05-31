@@ -9,7 +9,7 @@ import memeImg from "@/assets/images/ACHILLET.jpg";
 import fdlapImg from "@/assets/images/FdlogoS.gif";
 
 const archives = [
-  { image: cop10Img, label: "COP10 Conference", sublabel: "Archive", href: "#" },
+  // { image: cop10Img, label: "COP10 Conference", sublabel: "Archive", href: "#" },
   { image: truthImg, label: "Truth Emergency", sublabel: "Archive", href: "https://nikunjdz.github.io/truthemergency/" },
   { image: wbaiImg, label: "Ain't that Good News", sublabel: "WBAI Radio Show Archive", href: "https://nikunjdz.github.io/Aintthatgood/" },
   { image: chautauquaImg, label: "New Chautauqua", sublabel: "Archive", href: "https://nikunjdz.github.io/newchau-/newchau/arc/newindex.html" },
