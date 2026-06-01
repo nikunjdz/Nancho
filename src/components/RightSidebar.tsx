@@ -9,7 +9,7 @@ import memeImg from "@/assets/images/ACHILLET.jpg";
 import fdlapImg from "@/assets/images/FdlogoS.gif";
 
 const archives = [
-  // { image: cop10Img, label: "COP10 Conference", sublabel: "Archive", href: "#" },
+  { image: cop10Img, label: "COP10 Conference", sublabel: "Archive", href: "#" },
   { image: truthImg, label: "Truth Emergency", sublabel: "Archive", href: "https://nikunjdz.github.io/truthemergency/" },
   { image: wbaiImg, label: "Ain't that Good News", sublabel: "WBAI Radio Show Archive", href: "https://nikunjdz.github.io/Aintthatgood/" },
   { image: chautauquaImg, label: "New Chautauqua", sublabel: "Archive", href: "https://nikunjdz.github.io/newchau-/newchau/arc/newindex.html" },
@@ -19,13 +19,20 @@ const archives = [
   { image: fdlapImg, label: "Forum of Democratic Leaders", sublabel: "of the Asia-Pacific", href: "https://nikunjdz.github.io/formere/" },
 ];
 
-const RightSidebar = () => {
+interface RightSidebarProps {
+  onNavigate: (page: string) => void;
+}
+
+const RightSidebar = ({ onNavigate }: RightSidebarProps) => {
   return (
     // Increased width from 132px to 180px and padded the container
     <div className="w-[180px] flex flex-col items-center gap-10 p-4 text-center bg-transparent min-h-screen flex-shrink-0 border-l border-gray-800">
-
+      
       {/* Header Section */}
-      <div className="flex flex-col items-center mb-6">
+      <div 
+        onClick={() => onNavigate("home")}
+        className="flex flex-col items-center mb-6 cursor-pointer hover:opacity-85 transition-opacity"
+      >
         {/* Increased logo size from w-14 to w-20 */}
         <img src={archivesSignImg} alt="Archives" className="w-20 h-auto mb-3" />
         {/* Increased text size from 11px to 13px */}

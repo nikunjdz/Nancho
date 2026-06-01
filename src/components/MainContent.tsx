@@ -1,20 +1,27 @@
 import dragonLogo from "@/assets/dragon-logo.png";
 import earthLights from "@/assets/earth-lights.jpg";
 
-const NavBar = () => (
-  <div className="flex justify-center gap-2 text-base py-2">
+interface NavBarProps {
+  onNavigate: (page: string) => void;
+}
+
+export const NavBar = ({ onNavigate }: NavBarProps) => (
+  <div className="flex justify-center gap-2 text-base py-2 flex-wrap">
     {["Search", "Allies", "Approaches", "Study", "Assist", "Contact"].map((item, i) => (
       <span key={item}>
         {i > 0 && <span className="text-muted-foreground mx-1">|</span>}
-        <a href="#" className="text-retro-green hover:text-primary underline transition-colors">
+        <button
+          onClick={() => onNavigate(item.toLowerCase())}
+          className="text-retro-green hover:text-primary underline transition-colors font-bold focus:outline-none"
+        >
           {item}
-        </a>
+        </button>
       </span>
     ))}
   </div>
 );
 
-const MainContent = () => {
+const MainContent = ({ onNavigate }: { onNavigate: (page: string) => void }) => {
   return (
     <div className="flex-1 px-4 py-6">
       {/* Header */}
@@ -30,14 +37,14 @@ const MainContent = () => {
           <div className="w-32 mx-auto mt-1 border-b border-retro-amber" />
         </div>
       </div>
-
+ 
       {/* Notice */}
       <p className="text-accent text-center text-base mb-4 leading-relaxed">
         Big Med is now reformatting itself to undertake some new journalistic and field projects. 
         This site is currently an archive of previous initiatives and perpetually provocative ideas, 
         but will be updated soon to reflect current activities.
       </p>
-
+ 
       {/* Areas of Concern */}
       <h2 className="text-accent text-center text-lg font-bold mb-3">
         Big Med's Areas of Continuing Concern
@@ -48,9 +55,9 @@ const MainContent = () => {
         <li>Deteriorating Human and Environmental Health</li>
         <li>Lack of Synergy among Most Single Issue Groups</li>
       </ul>
-
+ 
       <div className="border-t border-border my-4" />
-      <NavBar />
+      <NavBar onNavigate={onNavigate} />
       <div className="border-t border-border my-4" />
 
       {/* Main Text */}
@@ -133,7 +140,7 @@ const MainContent = () => {
       </div>
 
       <div className="border-t border-border my-6" />
-      <NavBar />
+      <NavBar onNavigate={onNavigate} />
       <div className="border-t border-border my-4" />
 
       {/* Footer */}
